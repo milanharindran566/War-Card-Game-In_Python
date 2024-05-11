@@ -40,11 +40,7 @@ class Deck:
     has dealcards method
     """
     def __init__(self):
-        self.all_cards = []
-        
-        for suit in suits:
-            for rank in ranks:
-                self.all_cards.append(Card(suit,rank))
+        self.all_cards = [Card(suit,rank) for suit in suits for rank in ranks]
     def shuffleDeck(self):
         r.shuffle(self.all_cards)
     def dealCards(self, deck):
